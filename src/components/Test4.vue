@@ -6,13 +6,13 @@
         <link rel="shortcut icon" href="../img/empty_favicon.ico">
         <span v-for="(item, index) of star" :key="index" @click="changeScore(index)">
             <link rel="stylesheet icon" href="//at.alicdn.com/t/c/font_3828548_lkfeah6p7ik.css">
-            <i class="iconfont icon-star" :class="{'active':starIndex > index, 'half':starIndex === index + 0.5}">
+            <i class="iconfont icon-star" :class="{ 'active': starIndex > index, 'half': starIndex === index + 0.5 }">
 
             </i>
 
         </span>
 
-        <span class="starScore-key">{{score}}分</span>
+        <span class="starScore-key">{{ score }}分</span>
 
     </div>
 
@@ -57,7 +57,7 @@ export default {
             }
 
             this.score = Number((this.starIndex) * 2).toFixed(1);
-            this.$emit('score',this.score);
+            this.$emit('score', this.score);
         }
 
     }
@@ -67,11 +67,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .starScore {
 
     .icon-star {
-        font-size:16px;
+        font-size: 16px;
         cursor: pointer;
 
         color: #E4E4E4;
@@ -105,5 +104,4 @@ export default {
     }
 
 }
-
 </style>

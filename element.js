@@ -1,7 +1,6 @@
+import {Aside, Button, Container, Form, FormItem, Header, Input, Main, Menu, MenuItem, MenuItemGroup, Message, Submenu} from 'element-ui'
 import Vue from 'vue'
-import { Button, Form, FormItem, Input, Message, Container, 
-    Header, Aside, Main, Menu, Submenu, MenuItem, MenuItemGroup } from 'element-ui'
- 
+
 Vue.use(Button)
 Vue.use(Form)
 Vue.use(FormItem)

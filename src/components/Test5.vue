@@ -6,13 +6,13 @@
         <link rel="shortcut icon" href="../img/empty_favicon.ico">
         <span v-for="(item, index) of star" :key="index">
             <link rel="stylesheet icon" href="//at.alicdn.com/t/c/font_3828548_d5q6n6g65cs.css">
-            <i class="iconfont icon-star" :class="{'active':starIndex > index, 'half':starIndex === index + 0.5}">
+            <i class="iconfont icon-star" :class="{ 'active': starIndex > index, 'half': starIndex === index + 0.5 }">
 
             </i>
 
         </span>
 
-        <span class="starScore-key">{{score}}</span>
+        <span class="starScore-key">{{ score }}</span>
 
     </div>
 
@@ -23,7 +23,7 @@
 export default {
 
     name: 'starScore',
-    props: {fatherScore:Number},
+    props: { fatherScore: Number },
     data() {
 
         return {
@@ -65,11 +65,10 @@ export default {
     mounted() {
         this.score = this.fatherScore.toFixed(1);
         this.starIndex = this.score / 2;
-        if (this.starIndex >= Math.floor(this.score) / 2)
-        {
-            this.starIndex = Math.floor(this.score)/2;
+        if (this.starIndex >= Math.floor(this.score) / 2) {
+            this.starIndex = Math.floor(this.score) / 2;
         }
-        console. log(this.score);
+        console.log(this.score);
     }
 
 };
@@ -77,11 +76,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .starScore {
 
     .icon-star {
-        font-size:24px;
+        font-size: 24px;
         cursor: pointer;
 
         color: #E4E4E4;
@@ -115,5 +113,4 @@ export default {
     }
 
 }
-
 </style>
