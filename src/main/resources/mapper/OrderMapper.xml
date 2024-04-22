@@ -4,19 +4,20 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.pointedInquery.entity.Order">
-        <id column="order_id" property="orderId" />
-        <result column="customer_id" property="customerId" />
-        <result column="expert_id" property="expertId" />
-        <result column="topic_id" property="topicId" />
-        <result column="pay_time" property="payTime" />
-        <result column="appoint_time" property="appointTime" />
-        <result column="state" property="state" />
-        <result column="price" property="price" />
+        <id column="order_id" property="orderId"/>
+        <result column="customer_id" property="customerId"/>
+        <result column="expert_id" property="expertId"/>
+        <result column="topic_id" property="topicId"/>
+        <result column="pay_time" property="payTime"/>
+        <result column="appoint_time" property="appointTime"/>
+        <result column="state" property="state"/>
+        <result column="price" property="price"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        order_id, customer_id, expert_id, topic_id, pay_time, appoint_time, state, price
+        order_id
+        , customer_id, expert_id, topic_id, pay_time, appoint_time, state, price
     </sql>
 
 </mapper>

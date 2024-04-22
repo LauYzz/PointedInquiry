@@ -4,14 +4,15 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.pointedInquery.entity.Administrator">
-        <id column="phone" property="phone" />
-        <result column="name" property="name" />
-        <result column="password" property="password" />
+        <id column="phone" property="phone"/>
+        <result column="name" property="name"/>
+        <result column="password" property="password"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        phone, name, password
+        phone
+        , name, password
     </sql>
 
 </mapper>

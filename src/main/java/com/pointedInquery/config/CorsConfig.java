@@ -1,4 +1,5 @@
 package com.pointedInquery.config;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
@@ -18,6 +19,6 @@ public class CorsConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", corsConfig);
 
-        return new CorsFilter((CorsConfigurationSource) source);
+        return new CorsFilter(source);
     }
 }

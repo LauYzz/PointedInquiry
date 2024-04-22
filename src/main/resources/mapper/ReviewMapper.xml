@@ -4,18 +4,19 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.pointedInquery.entity.Review">
-        <id column="id" property="id" />
-        <result column="user_id" property="userId" />
-        <result column="expert_id" property="expertId" />
-        <result column="topic_id" property="topicId" />
-        <result column="text" property="text" />
-        <result column="time" property="time" />
-        <result column="order_id" property="orderId" />
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="expert_id" property="expertId"/>
+        <result column="topic_id" property="topicId"/>
+        <result column="text" property="text"/>
+        <result column="time" property="time"/>
+        <result column="order_id" property="orderId"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, user_id, expert_id, topic_id, text, time, order_id
+        id
+        , user_id, expert_id, topic_id, text, time, order_id
     </sql>
 
 </mapper>

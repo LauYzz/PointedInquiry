@@ -4,22 +4,23 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.pointedInquery.entity.Expert">
-        <id column="phone" property="phone" />
-        <result column="real_name" property="realName" />
-        <result column="rating" property="rating" />
-        <result column="description" property="description" />
-        <result column="id" property="id" />
-        <result column="job" property="job" />
-        <result column="type" property="type" />
+        <id column="phone" property="phone"/>
+        <result column="real_name" property="realName"/>
+        <result column="rating" property="rating"/>
+        <result column="description" property="description"/>
+        <result column="id" property="id"/>
+        <result column="job" property="job"/>
+        <result column="type" property="type"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        phone, real_name, rating, description, id, job,type
+        phone
+        , real_name, rating, description, id, job,type
     </sql>
 
-<!--    <select id="selectByType" resultType="com.pointedInquery.entity.Expert">-->
-<!--        SELECT * FROM expert WHERE type = #{type}-->
-<!--    </select>-->
+    <!--    <select id="selectByType" resultType="com.pointedInquery.entity.Expert">-->
+    <!--        SELECT * FROM expert WHERE type = #{type}-->
+    <!--    </select>-->
 
 </mapper>

@@ -4,13 +4,14 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.pointedInquery.entity.Favoritedirs">
-        <id column="phone" property="phone" />
-        <result column="expert_id" property="expertId" />
+        <id column="phone" property="phone"/>
+        <result column="expert_id" property="expertId"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        phone, expert_id
+        phone
+        , expert_id
     </sql>
 
 </mapper>

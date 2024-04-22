@@ -5,15 +5,15 @@ import com.pointedInquery.entity.User;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  */
 public interface UserService extends IService<User> {
-	public int changePasswd(String newPasswd, String userId);
-	
-	public boolean IsExpert(String userId);
-	
-	public boolean beExpert(String userId);
+    int changePasswd(String newPasswd, String userId);
 
-	public int checkCollectDir(String userId, String expertId);
+    boolean IsExpert(String userId);
+
+    boolean beExpert(String userId);
+
+    int checkCollectDir(String userId, String expertId);
 }
