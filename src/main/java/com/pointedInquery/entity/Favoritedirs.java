@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
-@ApiModel(value="Favoritedirs对象", description="")
+@ApiModel(value = "Favoritedirs对象", description = "")
 public class Favoritedirs implements Serializable {
 
     private static final long serialVersionUID = 1L;

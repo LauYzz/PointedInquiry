@@ -8,13 +8,14 @@ import java.util.List;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
- *
  */
 public interface FavoritedirsService extends IService<Favoritedirs> {
-    public List<ExpertDetailedDto> GetDirsByUserid(String phone);
-    public boolean DeleteDirsByUserid(String phone, String expert_id);
-    public boolean CreateDirsByUserid(String phone, String expert_id);
+    List<ExpertDetailedDto> GetDirsByUserid(String phone);
+
+    boolean DeleteDirsByUserid(String phone, String expert_id);
+
+    boolean CreateDirsByUserid(String phone, String expert_id);
 
 }

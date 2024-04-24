@@ -17,20 +17,19 @@ public class FavoritedirsController {
     private FavoritedirsService favoritedirsService;
 
     @PostMapping("/GetDirsByUserid")
-    public List<ExpertDetailedDto> GetDirsByUserid(@RequestParam String phone){
+    public List<ExpertDetailedDto> GetDirsByUserid(@RequestParam String phone) {
         return favoritedirsService.GetDirsByUserid(phone);
     }
 
     @PostMapping("/DeleteDirsByUserid")
-    public boolean DeleteDirsByUserid(@RequestParam String phone,@RequestParam String expertId){
+    public boolean DeleteDirsByUserid(@RequestParam String phone, @RequestParam String expertId) {
         return favoritedirsService.DeleteDirsByUserid(phone, expertId);
     }
 
     @PostMapping("/CreateDirsByUserid")
-    public boolean CreateDirsByUserid(String phone, String expertId){
-        return favoritedirsService.CreateDirsByUserid(phone,expertId);
+    public boolean CreateDirsByUserid(String phone, String expertId) {
+        return favoritedirsService.CreateDirsByUserid(phone, expertId);
     }
-
 
 
 }
