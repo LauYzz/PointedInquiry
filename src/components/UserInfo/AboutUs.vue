@@ -1,15 +1,15 @@
 <template>
-    <div>
-        <Header />
-            <el-container>
-                <el-main style="height:710px;">
-<span>关于我们</span>
-                </el-main>
-            </el-container>
-            <el-container>
-                <Footer :num="num"/>
-            </el-container>
-    </div>
+  <div>
+    <Header />
+    <el-container>
+      <el-main style="height:710px;">
+        <span>关于我们</span>
+      </el-main>
+    </el-container>
+    <el-container>
+      <Footer :num="num" />
+    </el-container>
+  </div>
 </template>
 
 
@@ -18,31 +18,31 @@ import Footer from '../Screen/Footer.vue';
 import getQualification from '../getQualification/getQualification.vue';
 import Header from '../Screen/Header.vue';
 export default {
-    data() {
+  data() {
     return {
       num: "third",
       dialogVisible: false,
-        };
-    },
-    components: {
-        Footer,
-      Header,
-      getQualification
+    };
+  },
+  components: {
+    Footer,
+    Header,
+    getQualification
   },
   methods: {
     linkToUserInfo() {
       this.$router.push('/UserInfo');
-      },
-      linkToGetQualification() {
-        this.dialogVisible = true;
+    },
+    linkToGetQualification() {
+      this.dialogVisible = true;
     },
     linkToMyCollection() {
       this.$router.push('/MyCollection');
-      },
-      handleClose(done) {
-            done();
-      }
+    },
+    handleClose(done) {
+      done();
     }
+  }
 }
 </script>
 
