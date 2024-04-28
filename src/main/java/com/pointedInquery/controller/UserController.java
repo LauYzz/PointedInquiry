@@ -56,7 +56,7 @@ public class UserController {
         if (userId == null || passwd == null) {
             return ServerResponse.failure(ReturnCode.INFO_EMPTY);
         }
-        //账号没有被注注册过
+        //账号没有被注册过
         if (userService.getById(userId) != null) {
             return ServerResponse.failure(ReturnCode.USERID_USED);
         }
@@ -73,7 +73,7 @@ public class UserController {
         }
     }
 
-    //返回用户个人信息，同时将密码设为null避免泄露
+    //返回用户个人信息，同时将密码设为null，避免泄露
     @PostMapping("/myInfo")
     public PersonalInfoDto myInfo(@RequestParam String userId) {
         User user = userService.getById(userId);
