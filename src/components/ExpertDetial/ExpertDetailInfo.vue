@@ -4,54 +4,84 @@
     <el-container>
       <el-main style="height: 710px">
         <el-card>
-          <link rel="stylesheet icon" href="//at.alicdn.com/t/c/font_3828548_ji2jrn939.css" />
+          <link
+            rel="stylesheet icon"
+            href="//at.alicdn.com/t/c/font_3828548_ji2jrn939.css"
+          />
           <span class="name">{{ ExpertDetailInfo.realName }}</span>
           <span class="title">{{ ExpertDetailInfo.job }}</span>
           <div class="infos">
-            <span class="sub"><i class="iconfont icon-shoucang"></i>{{ ExpertDetailInfo.rating }}分</span>
+            <span class="sub"
+              ><i class="iconfont icon-shoucang"></i
+              >{{ ExpertDetailInfo.rating }}分</span
+            >
             <span class="sub">￥{{ ExpertDetailInfo.price }}元</span>
           </div>
           <div>
             <br />
-            <span class="subtitle"><i class="el-icon-chat-dot-round"></i>&nbsp;咨询话题</span>
-            <div v-for="(item, index) in ExpertDetailInfo.topics" :key="'new' + index" class="topic-container">
+            <span class="subtitle"
+              ><i class="el-icon-chat-dot-round"></i>&nbsp;咨询话题</span
+            >
+            <div
+              v-for="(item, index) in ExpertDetailInfo.topics"
+              :key="'new' + index"
+              class="topic-container"
+            >
               <span class="topic-span">{{ "#" + item.title }}</span>
             </div>
           </div>
           <br />
           <div>
-            <span class="subtitle"><i class="el-icon-tickets"></i>&nbsp;个人简介</span>
+            <span class="subtitle"
+              ><i class="el-icon-tickets"></i>&nbsp;个人简介</span
+            >
             <br />
             <span>{{ ExpertDetailInfo.description }}</span>
           </div>
           <br />
-          <span class="subtitle"><i class="el-icon-medal"></i>&nbsp;用户评价</span>
-          <el-card v-for="(item, index1) in ExpertDetailInfo.reviews" :key="index1">
-            <div style="
+          <span class="subtitle"
+            ><i class="el-icon-medal"></i>&nbsp;用户评价</span
+          >
+          <el-card
+            v-for="(item, index1) in ExpertDetailInfo.reviews"
+            :key="index1"
+          >
+            <div
+              style="
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-              ">
+              "
+            >
               <div style="display: flex; align-items: center">
-                <img src="../../img/avatar.svg" style="width: 30px; height: 30px" />
-                <div style="
+                <img
+                  src="../../img/avatar.svg"
+                  style="width: 30px; height: 30px"
+                />
+                <div
+                  style="
                     display: flex;
                     flex-direction: column;
                     margin-left: 5px;
-                  ">
-                  <div style="
+                  "
+                >
+                  <div
+                    style="
                       font-weight: bolder;
                       display: flex;
                       align-items: center;
-                    ">
+                    "
+                  >
                     {{ item.userId }}
                   </div>
-                  <div style="
+                  <div
+                    style="
                       display: flex;
                       align-items: center;
                       font-size: 12px;
                       color: rgb(163, 162, 162);
-                    ">
+                    "
+                  >
                     {{ item.time }}
                   </div>
                 </div>
@@ -70,16 +100,25 @@
               {{ favoriteText }}
             </el-button>
             <el-button @click="linkToConfirmOrder()" round>立即咨询</el-button>
-            <el-dialog title="订单支付" :visible.sync="dialogVisible" width="95%" :before-close="handleClose">
-              <ConfirmOrder :expert_id="expert_id" :name="ExpertDetailInfo.realName" @close="handleCloseEvent" />
+            <el-dialog
+              title="订单支付"
+              :visible.sync="dialogVisible"
+              width="95%"
+              :before-close="handleClose"
+            >
+              <ConfirmOrder
+                :expert_id="expert_id"
+                :name="ExpertDetailInfo.realName"
+                @close="handleCloseEvent"
+              />
             </el-dialog>
           </div>
         </el-card>
-
       </el-main>
+    </el-container>
+    <Footer :num="num"></Footer>
   </el-container>
-  <Footer :num="num"></Footer>
-</el-container></template>
+</template>
 
 <style scoped lang="less">
 .topic-container {
@@ -401,15 +440,15 @@ export default {
     this.expert_id = this.$route.params.id;
     var that = this;
     var config = {
-        method: "get",
-        url: "/expert/getOne",
-        params: {
-          expertId: this.expert_id,
-        },
-      };
-      axios(config).then((res)=>{
-        that.ExpertDetailInfo = res.data.data;
-      })
+      method: "get",
+      url: "/expert/getOne",
+      params: {
+        expertId: this.expert_id,
+      },
+    };
+    axios(config).then((res) => {
+      that.ExpertDetailInfo = res.data.data;
+    });
     this.isFavorite().then((res) => {
       console.log("这个是回来的值：" + res.data.data);
       that.isFavorited = res.data.data;
