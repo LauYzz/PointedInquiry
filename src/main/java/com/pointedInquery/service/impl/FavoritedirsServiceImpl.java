@@ -43,11 +43,13 @@ public class FavoritedirsServiceImpl extends ServiceImpl<FavoritedirsMapper, Fav
     public List<ExpertDetailedDto> GetDirsByUserid(String phone) {
         List<Favoritedirs> favoritedirs = favoritedirsMapper.selectExpertList(phone);
         List<ExpertDetailedDto> expertDetailedDtos = new ArrayList<>();
+
         for (Favoritedirs favoritedir : favoritedirs) {
             Expert expert = expertMapper.selectExpertByExpertId(favoritedir.getExpertId()); // TODO,此处是phone还是expertid
             List<Topic> topics = topicMapper.selectTopicByExpert(favoritedir.getExpertId());
             List<Review> reviewList = reviewMapper.selectReviewByExpert(favoritedir.getExpertId());
             List<HashMap<String, Object>> reviews = new ArrayList<>();
+
             for (Review review : reviewList) {
                 HashMap<String, Object> reviewDetail = new HashMap<>();
                 reviewDetail.put("id", review.getId());
@@ -61,6 +63,7 @@ public class FavoritedirsServiceImpl extends ServiceImpl<FavoritedirsMapper, Fav
                 reviewDetail.put("name", userMapper.selectNameById(review.getUserId()));
                 reviews.add(reviewDetail);
             }
+
             int lowestPrice = expertService.getLowestPrice(favoritedir.getExpertId());
             expertDetailedDtos.add(new ExpertDetailedDto(favoritedir.getExpertId(), expert.getRealName(), expert.getRating(), expert.getDescription(), expert.getId(),
                     expert.getJob(), lowestPrice, expert.getType(), topics, reviews));
