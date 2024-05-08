@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/user")
 public class UserController {
+
     @Autowired
     private UserService userService;
 
@@ -25,12 +26,14 @@ public class UserController {
     public ServerResponse<String> login(@RequestParam String userId, @RequestParam String passwd) {
         // 用户账号不存在
 
-        System.out.println(userId);
-        System.out.println(passwd);
+        System.out.println("Login success.");
+//        System.out.println(userId);
+//        System.out.println(passwd);
 
         if (userId == null || userService.count() == 0) {
             return ServerResponse.failure(ReturnCode.USERID_OR_PASSWORD_ERROR);
         }
+
         User user = userService.getById(userId);
         System.out.println("userId: " + getMD5Str(passwd));
         System.out.println("database: " + user.getPassword());
@@ -54,6 +57,7 @@ public class UserController {
         if (userService.getById(userId) != null) {
             return ServerResponse.failure(ReturnCode.USERID_USED);
         }
+
         User user = new User();
         user.setPhone(userId);
         // 刚注册用户不会有行家权限
@@ -79,9 +83,10 @@ public class UserController {
         return userService.saveOrUpdate(user);
     }
 
-    //判断是否被收藏
+    // 判断是否被收藏
     @GetMapping("/checkCollectDir")
     public int checkCollectDir(String userId, String expertId) {
         return userService.checkCollectDir(userId, expertId);
     }
+
 }
