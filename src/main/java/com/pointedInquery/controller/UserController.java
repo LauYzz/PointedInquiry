@@ -16,20 +16,14 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    //对密码进行MD5加密
+    // 对密码进行MD5加密
     private String getMD5Str(String passwd) {
         return DigestUtils.md5DigestAsHex(passwd.getBytes());
     }
 
-    //调用第三方接口验证
-//	@PostMapping("/becomeExpert")
-//	public boolean becomeExpert(String userId,String name,String ID) {
-//		return userService.beExpert(userId);
-//	}
-
     @PostMapping("/login")
     public ServerResponse<String> login(@RequestParam String userId, @RequestParam String passwd) {
-        //用户账号不存在
+        // 用户账号不存在
 
         System.out.println(userId);
         System.out.println(passwd);
@@ -40,11 +34,11 @@ public class UserController {
         User user = userService.getById(userId);
         System.out.println("userId: " + getMD5Str(passwd));
         System.out.println("database: " + user.getPassword());
-        //密码错误
+        // 密码错误
         if (!getMD5Str(passwd).equals(user.getPassword())) {
             return ServerResponse.failure(ReturnCode.USERID_OR_PASSWORD_ERROR);
         }
-        //String token=LoginInterceptor.GenerateToken(userId);
+        // String token=LoginInterceptor.GenerateToken(userId);
         return ServerResponse.success("ok");
     }
 
@@ -56,15 +50,15 @@ public class UserController {
         if (userId == null || passwd == null) {
             return ServerResponse.failure(ReturnCode.INFO_EMPTY);
         }
-        //账号没有被注册过
+        // 账号没有被注册过
         if (userService.getById(userId) != null) {
             return ServerResponse.failure(ReturnCode.USERID_USED);
         }
         User user = new User();
-        //刚注册用户不会有行家权限
         user.setPhone(userId);
+        // 刚注册用户不会有行家权限
         user.setIsExpert(0);
-        //对密码进行加密
+        // 对密码进行加密
         user.setPassword(getMD5Str(passwd));
         if (userService.save(user))
             return ServerResponse.success(true);
@@ -73,12 +67,11 @@ public class UserController {
         }
     }
 
-    //返回用户个人信息，同时将密码设为null，避免泄露
+    // 返回用户个人信息，同时将密码设为null，避免泄露
     @PostMapping("/myInfo")
     public PersonalInfoDto myInfo(@RequestParam String userId) {
         User user = userService.getById(userId);
-        PersonalInfoDto personalInfoDto = new PersonalInfoDto(user.getPhone(), user.getName(), user.getSchool(), user.getIsExpert());
-        return personalInfoDto;
+        return new PersonalInfoDto(user.getPhone(), user.getName(), user.getSchool(), user.getIsExpert());
     }
 
     @PostMapping("/changeInfo")
