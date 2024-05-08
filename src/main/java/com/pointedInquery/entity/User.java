@@ -34,5 +34,5 @@ public class User implements Serializable {
     @ApiModelProperty(value = "是否有专家身份，0表示不是专家，1表示是专家")
     @TableField("is_expert")
     private Integer isExpert;
-    
+
 }
