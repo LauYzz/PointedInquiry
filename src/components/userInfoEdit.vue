@@ -1,6 +1,7 @@
 <template>
   <div class="personalCenter">
     <el-dialog :visible.sync="examineBtn" width="70%">
+
       姓名
       <el-input v-model="input5" type="text" placeholder="请输入您的姓名" show-word-limit></el-input>
 
@@ -73,8 +74,8 @@ export default {
       location.reload();
     },
     getCity(value1, value2) {
-      console.log("这是pid的值" + value1);
-      console.log("这是cid的值" + value2);
+      console.log("pid的值为:" + value1);
+      console.log("cid的值为:" + value2);
       this.pid = value1;
       this.cid = value2;
     },
@@ -85,14 +86,14 @@ export default {
       console.log(index, row)
     },
     init() {
-      console.log("这是详情组件");
+      console.log("详情组件");
       this.examineBtn = true;
     },
   },
   mounted() {
 
     this.userId = localStorage.getItem('userId');
-    console.log("个人信息编辑页面的userId是" + this.userId);
+    console.log("个人信息编辑页面的userId为: " + this.userId);
   }
 }
 </script>

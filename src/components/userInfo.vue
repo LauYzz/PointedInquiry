@@ -56,7 +56,7 @@
 </template>
 
 <script>
-//个人信息的编辑，涉及到省份和城市接口的调用，先选省份，选好后得到pid再传给city接口才能得到city信息。
+// 个人信息的编辑，涉及到省份和城市接口的调用，先选省份，选好后得到pid再传给city接口才能得到city信息。
 import axios from 'axios';
 import Footer from './Screen/Footer.vue';
 import Header from './Screen/Header.vue';
@@ -83,7 +83,7 @@ export default {
   },
   mounted() {
     this.userId = localStorage.getItem('userId');
-    console.log("个人信息页面的userId是" + this.userId);
+    console.log("个人信息页面的userId为: " + this.userId);
     var data = new FormData();
     data.append("userId", this.userId);
     var config = {
@@ -114,7 +114,7 @@ export default {
   },
   methods: {
     edit() {
-      console.log("这是edit函数");
+      console.log("edit函数被调用");
       this.$refs.userInfoEdit.init();
     }
   },
