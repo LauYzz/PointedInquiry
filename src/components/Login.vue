@@ -76,11 +76,11 @@ export default {
   methods: {
 
     backToWelcome() {
-      console.log("返回Welcome页");
+      console.log("返回Welcome页面");
       this.$router.push('/Welcome');
     },
     linkToHome() {
-      console.log("前往Home页");
+      console.log("前往Home页面");
       this.$router.push('/Home');
     },
     doLogin: function () {
@@ -110,7 +110,7 @@ export default {
           that.accept = response;
           console.log(JSON.stringify(response.data));
           if (response.data.status == "1002") {
-            alert("用户名或密码输入错误");
+            alert("用户名或密码错误");
           }
           if (response.data.status == "100") {
             var storage = window.localStorage;
@@ -122,7 +122,7 @@ export default {
         .catch(function (error) {
           console.log(error);
         });
-      console.log("这是接受的值" + that.accept);
+      console.log("接受的值为" + that.accept);
     },
 
     resetLoginForm() {
