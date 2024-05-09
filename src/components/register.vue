@@ -37,6 +37,7 @@
 
         </el-tab-pane>
       </el-tabs>
+      
     </div>
   </div>
 </template>
@@ -60,7 +61,7 @@ export default {
       if (value === "") {
         callback(new Error("请再次输入密码"));
       } else if (value !== this.ruleForm.pass) {
-        callback(new Error("两次输入密码不一致!"));
+        callback(new Error("两次输入的密码不一致!"));
       } else {
         callback();
       }
@@ -95,7 +96,7 @@ export default {
       this.$router.push('/login');
     },
     backToWelcome() {
-      console.log("返回Welcome页");
+      console.log("返回Welcome页面");
       this.$router.push('/Welcome');
     },
     doRegister() {
@@ -134,7 +135,7 @@ export default {
           });
           // this.activeName: 'first',
         } else {
-          console.log("error submit!!");
+          console.log("提交了错误的表单");
           return false;
         }
       });
