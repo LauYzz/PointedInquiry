@@ -1,10 +1,10 @@
 <template>
-<el-container>
-        <Header/>
-        <el-container>
-            <el-main style="height:710px;"><ExpertScreen /></el-main>
-        </el-container>
-        <Footer :num="num"></Footer>
+  <el-container>
+    <Header />
+    <el-container>
+      <el-main style="height: 710px"><ExpertScreen /></el-main>
+    </el-container>
+    <Footer :num="num"></Footer>
   </el-container>
 </template>
 
@@ -14,7 +14,6 @@
   padding: 0px;
 }
 
-
 .el-container {
   display: block;
   flex-direction: row;
@@ -23,25 +22,26 @@
   box-sizing: border-box;
   min-width: 0;
 }
-.el-header{
-     background-color:darkslategrey;
-     display: flex; 
-     justify-content: space-between;
-     padding-left: 12px;
-     align-items: center;
-     color: #fff;
-     font-size: 24px;
-     > div {//内嵌的div样式
-         display: flex;
-         align-items: center;
-         span {
-             margin-left: 25px;
-         }
-     }
- }
- .element.style {
-    height: 100px;
- }
+.el-header {
+  background-color: darkslategrey;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 12px;
+  align-items: center;
+  color: #fff;
+  font-size: 24px;
+  > div {
+    //内嵌的div样式
+    display: flex;
+    align-items: center;
+    span {
+      margin-left: 25px;
+    }
+  }
+}
+.element.style {
+  height: 100px;
+}
 
 .toggle-button {
   background-color: #4a5064; //背景色(浅灰)
@@ -77,12 +77,11 @@ import Header from "./Header.vue";
 import Topic1 from "../Topic1.vue";
 import userInfo from "../userInfo.vue";
 export default {
-
   data() {
     return {
       isCollapse: false,
       num: "first",
-      keyword:"",
+      keyword: "",
     };
   },
   components: {
@@ -91,8 +90,8 @@ export default {
     ExpertScreen,
     Footer,
     Header,
-    ExpertScreen
-},
+    ExpertScreen,
+  },
   methods: {
     logout() {
       window.sessionStorage.clear();
@@ -101,18 +100,18 @@ export default {
     userInfoShow() {
       this.$router.push("/userInfo");
     },
-    methods:{
-        logout(){
-            window.sessionStorage.clear();
-            this.$router.push('/login');
-        },
-        userInfoShow() {
-            this.$router.push('/userInfo'); 
-        }
+    methods: {
+      logout() {
+        window.sessionStorage.clear();
+        this.$router.push("/login");
+      },
+      userInfoShow() {
+        this.$router.push("/userInfo");
+      },
     },
     mounted() {
-        this.userId = localStorage.getItem('userId');
-        console.log("Home页面的userId是"+this.userId);
+      this.userId = localStorage.getItem("userId");
+      console.log("Home页面的userId是" + this.userId);
     },
   },
 };
