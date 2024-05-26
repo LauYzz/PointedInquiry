@@ -5,13 +5,34 @@
     <meta name="theme-color" content="#183C5E" />
     <link rel="manifest" href="manifest.json" />
     <link rel="icon" href="logo.png" />
-    <div id="w1" class="act-photo" style="position: relative; height: 300rpx; width: 100%; margin: auto">
-      <div id="w2" class="vert-center text-center" style="height: 150rpx; margin-top: 700px">
-        <el-button class="cu-btn bg-black text-white shadow-blur text-xs"
-          style="opacity: 0.7; width: 150rpx; margin-right: 80px; font-size: 30px" @click="linkToLogin()">登录</el-button>
+    <div
+      id="w1"
+      class="act-photo"
+      style="position: relative; height: 300rpx; width: 100%; margin: auto"
+    >
+      <div
+        id="w2"
+        class="vert-center text-center"
+        style="height: 150rpx; margin-top: 700px"
+      >
+        <el-button
+          class="cu-btn bg-black text-white shadow-blur text-xs"
+          style="
+            opacity: 0.7;
+            width: 150rpx;
+            margin-right: 80px;
+            font-size: 30px;
+          "
+          @click="linkToLogin()"
+          >登录</el-button
+        >
 
-        <el-button class="margin-left cu-btn bg-black text-white shadow-blur text-xs"
-          style="opacity: 0.7; width: 150rpx; font-size: 30px" @click="linkToRegister()">注册</el-button>
+        <el-button
+          class="margin-left cu-btn bg-black text-white shadow-blur text-xs"
+          style="opacity: 0.7; width: 150rpx; font-size: 30px"
+          @click="linkToRegister()"
+          >注册</el-button
+        >
       </div>
     </div>
   </div>
@@ -76,7 +97,9 @@ export default {
   },
   mounted() {
     axios
-      .get("https://www.fastmock.site/mock/e31676a60c7bc77b9f15db12616b2efc/Topic/topic")
+      .get(
+        "https://www.fastmock.site/mock/e31676a60c7bc77b9f15db12616b2efc/Topic/topic"
+      )
       .then((res) => {
         this.T = res.data;
         console.log(this.T);
