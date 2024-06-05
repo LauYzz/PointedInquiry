@@ -15,6 +15,12 @@ public interface ExpertMapper extends BaseMapper<Expert> {
     @Select(" SELECT * FROM expert WHERE type = #{type}")
     public List<Expert> selectByType(int type);
 
+    @Select("SELECT * FROM expert WHERE type = #{type} ORDER BY rating DESC")
+    public List<Expert> selectByTypeOrderByRating(int type);
+
+    @Select("SELECT e.* FROM expert e LEFT JOIN review r ON e.phone = r.expert_id WHERE e.type = #{type} GROUP BY e.phone ORDER BY COUNT(r.id) DESC")
+    public List<Expert> selectByTypeOrderByCommentCount(int type);
+
     @Select("SELECT e.* FROM expert e JOIN favoritedirs f ON e.phone = f.expert_id WHERE f.phone = #{userID}")
     public List<Expert> selectCollectExpert(String userID);
 

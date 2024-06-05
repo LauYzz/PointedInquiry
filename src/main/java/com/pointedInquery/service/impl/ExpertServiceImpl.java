@@ -77,8 +77,16 @@ public class ExpertServiceImpl extends ServiceImpl<ExpertMapper, Expert> impleme
 
 
     @Override
-    public List<ExpertWithTopics> listByType(int type) {
-        List<Expert> experts = expertMapper.selectByType(type);
+    public List<ExpertWithTopics> listByType(int type, int sortType) {
+        List<Expert> experts = new ArrayList<>();
+        if(sortType == 0) {
+            experts = expertMapper.selectByType(type);
+        } else if(sortType == 1) {
+            experts = expertMapper.selectByTypeOrderByRating(type);
+        } else if(sortType == 2) {
+            experts = expertMapper.selectByTypeOrderByCommentCount(type);
+        }
+
         List<ExpertWithTopics> expertDetails  = new ArrayList<>();
         for(Expert e: experts) {
             List<Topic> topics = expertMapper.selectTopicsByExpertId(e.getPhone());
