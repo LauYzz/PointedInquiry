@@ -1,3 +1,62 @@
+<script>
+import axios from "axios";
+import Vue from 'vue';
+import Vuex from 'vuex';
+import Expert from './expert.vue';
+import Test5 from "./Test5.vue";
+Vue.use(Vuex);
+
+
+export default {
+  props:
+      ['value']
+    ,
+  data() {
+      return {
+        url:"https://www.fastmock.site/mock/250ee180a111c6d746fee10f8955645e/UserOrders/Orders",
+        Orders:[],
+        currentDate: new Date()
+      };
+  },
+  components: {
+      Expert,
+      Test5
+  },
+    methods: {
+      getExpert(item, index) {
+        console.log(this.Orders[index].promoter);
+        var id = this.Orders[index].promoter;
+        this.$router.push({
+          path: `/expert/${id}`
+        })
+      },
+  
+
+        //从接口获取Topic信息，初始化给Orders
+        //点击某个Topic，获取到Topic的id，访问id对应的商品页面（把id给到商品详情页，由这个页面来发送请求给后端id，关注一下怎么传值吧！）
+      
+  },
+  mounted() {
+    axios.get(this.url).then(res => {
+          this.Orders = res.data;
+      console.log(this.Orders);
+      var length = this.Orders.length;
+      console.log(length);
+      for (var i = 0; i < length; i++)
+      {
+        if (this.Orders[i].way === '0') {
+          console.log(this.Orders[i].way);
+          this.Orders[i].by = '线上约聊';
+        }
+        else {
+          console.log(this.Orders[i].way)
+          this.Orders[i].by = '线下约聊';
+        }
+      }
+        })
+    }
+  }
+  </script>
 <template>
     <div class="bg">
     <el-row>
@@ -41,8 +100,7 @@
       </div>
     </template>
     
-      <style scoped lang="less">
-
+<style scoped lang="less">
 
 .btn{
     
@@ -143,62 +201,3 @@
         }
       </style>
 
-<script>
-import axios from "axios";
-import Vue from 'vue';
-import Vuex from 'vuex';
-import Expert from './expert.vue';
-import Test5 from "./Test5.vue";
-Vue.use(Vuex);
-
-
-export default {
-  props:
-      ['value']
-    ,
-  data() {
-      return {
-        url:"https://www.fastmock.site/mock/250ee180a111c6d746fee10f8955645e/UserOrders/Orders",
-        Orders:[],
-        currentDate: new Date()
-      };
-  },
-  components: {
-      Expert,
-      Test5
-  },
-    methods: {
-      getExpert(item, index) {
-        console.log(this.Orders[index].promoter);
-        var id = this.Orders[index].promoter;
-        this.$router.push({
-          path: `/expert/${id}`
-        })
-      },
-  
-
-        //从接口获取Topic信息，初始化给Orders
-        //点击某个Topic，获取到Topic的id，访问id对应的商品页面（把id给到商品详情页，由这个页面来发送请求给后端id，关注一下怎么传值吧！）
-      
-  },
-  mounted() {
-    axios.get(this.url).then(res => {
-          this.Orders = res.data;
-      console.log(this.Orders);
-      var length = this.Orders.length;
-      console.log(length);
-      for (var i = 0; i < length; i++)
-      {
-        if (this.Orders[i].way === '0') {
-          console.log(this.Orders[i].way);
-          this.Orders[i].by = '线上约聊';
-        }
-        else {
-          console.log(this.Orders[i].way)
-          this.Orders[i].by = '线下约聊';
-        }
-      }
-        })
-    }
-  }
-  </script>
