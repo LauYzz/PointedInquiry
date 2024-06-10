@@ -18,55 +18,55 @@ import java.util.Map;
 @RestController
 @RequestMapping("/expert")
 public class ExpertController {
-	@Autowired
-	private ExpertService expertService;
+    @Autowired
+    private ExpertService expertService;
 
-	//排序类型
-	private static final int Default = 0;
-	private static final int Rating = 1;
-	private static final int Comment = 2;
+    //排序类型
+    private static final int Default = 0;
+    private static final int Rating = 1;
+    private static final int Comment = 2;
 
-	//根据前端传入的type返回属于这个类型的专家
-	@GetMapping("/getAll")
-	public List<ExpertServiceImpl.ExpertWithTopics> getAll(@RequestParam int type) {
-		return expertService.listByType(type, Default);
-	}
+    //根据前端传入的type返回属于这个类型的专家
+    @GetMapping("/getAll")
+    public List<ExpertServiceImpl.ExpertWithTopics> getAll(@RequestParam int type) {
+        return expertService.listByType(type, Default);
+    }
 
-	//根据前端传入的type返回属于这个类型的专家，按照评分排序
-	@GetMapping("/getAllByRating")
-	public List<ExpertServiceImpl.ExpertWithTopics> getAllByRating(@RequestParam int type) {
-		return expertService.listByType(type, Rating);
-	}
+    //根据前端传入的type返回属于这个类型的专家，按照评分排序
+    @GetMapping("/getAllByRating")
+    public List<ExpertServiceImpl.ExpertWithTopics> getAllByRating(@RequestParam int type) {
+        return expertService.listByType(type, Rating);
+    }
 
-	//根据前端传入的type返回属于这个类型的专家，按照评论数排序
-	@GetMapping("/getAllByCommentCount")
-	public List<ExpertServiceImpl.ExpertWithTopics> getAllByCommentCount(@RequestParam int type) {
-		return expertService.listByType(type, Comment);
-	}
+    //根据前端传入的type返回属于这个类型的专家，按照评论数排序
+    @GetMapping("/getAllByCommentCount")
+    public List<ExpertServiceImpl.ExpertWithTopics> getAllByCommentCount(@RequestParam int type) {
+        return expertService.listByType(type, Comment);
+    }
 
-//	后端返回的data是一个数组，表示所有匹配的专家信息，包括realName，job，topic数组（表示一个专家包含的所有topic）,price
-	@GetMapping("/search")
-	public List<ExpertServiceImpl.ExpertWithTopics> searchExpert(@RequestParam String content) {
-		return expertService.getExpertsWithTopics(content);
-	}
+    //	后端返回的data是一个数组，表示所有匹配的专家信息，包括realName，job，topic数组（表示一个专家包含的所有topic）,price
+    @GetMapping("/search")
+    public List<ExpertServiceImpl.ExpertWithTopics> searchExpert(@RequestParam String content) {
+        return expertService.getExpertsWithTopics(content);
+    }
 
-	@GetMapping("/getOne")
-	public ExpertDetailedDto getOne(@RequestParam String expertId) {
-		return expertService.getOneExpert(expertId);
-	}
-
-	
-	//行家修改自己的个人信息
-	@PostMapping("/changeInfo")
-	public int changeInfo(AddExpertDto addExpertDto) {
-		return expertService.saveOrUpdate(addExpertDto);
-	}
+    @GetMapping("/getOne")
+    public ExpertDetailedDto getOne(@RequestParam String expertId) {
+        return expertService.getOneExpert(expertId);
+    }
 
 
-	//个人申请成为行家
-	@PostMapping("/addExpert")
-	public int addExpert(AddExpertDto addExpertDto) {
-		return expertService.addExpert(addExpertDto);
-	}
+    //行家修改自己的个人信息
+    @PostMapping("/changeInfo")
+    public int changeInfo(AddExpertDto addExpertDto) {
+        return expertService.saveOrUpdate(addExpertDto);
+    }
+
+
+    //个人申请成为行家
+    @PostMapping("/addExpert")
+    public int addExpert(AddExpertDto addExpertDto) {
+        return expertService.addExpert(addExpertDto);
+    }
 
 }
