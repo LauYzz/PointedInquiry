@@ -18,27 +18,27 @@ import com.pointedInquery.service.TopicService;
 @RestController
 @RequestMapping("/topic")
 public class TopicController {
-	@Autowired
-	private TopicService topicService;
+    @Autowired
+    private TopicService topicService;
 
-	@PostMapping("/addTopic")
-	public Integer addTopic(String expertId, String title, String text, Integer price, String way) {
-		return topicService.addTopic(expertId, title,text, price, way);
-	}
+    @PostMapping("/addTopic")
+    public Integer addTopic(String expertId, String title, String text, Integer price, String way) {
+        return topicService.addTopic(expertId, title, text, price, way);
+    }
 
-	@PostMapping("/refactorTopic")
-	public Integer refactorTopic(String topicId, String title, String text, Integer price, String way) {
-		return topicService.refactorTopic(topicId, title,text, price, way);
-	}
+    @PostMapping("/refactorTopic")
+    public Integer refactorTopic(String topicId, String title, String text, Integer price, String way) {
+        return topicService.refactorTopic(topicId, title, text, price, way);
+    }
 
-	@PostMapping("/deleteTopic")
-	public Integer deleteTopic(String topicId) {
-		return topicService.deleteTopic(topicId);
-	}
+    @PostMapping("/deleteTopic")
+    public Integer deleteTopic(String topicId) {
+        return topicService.deleteTopic(topicId);
+    }
 
-	@GetMapping("/getAllTopicByExpertId")
-	public List<Topic> getAllTopicByExpertId(String expertId) {
-		return topicService.getTopicByExpertId(expertId);
-	}
+    @GetMapping("/getAllTopicByExpertId")
+    public List<Topic> getAllTopicByExpertId(String expertId) {
+        return topicService.getTopicByExpertId(expertId);
+    }
 
 }
