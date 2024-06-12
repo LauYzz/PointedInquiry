@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
-@ApiModel(value="Topic对象", description="")
+@ApiModel(value = "Topic对象", description = "")
 public class Topic implements Serializable {
 
     private static final long serialVersionUID = 1L;
