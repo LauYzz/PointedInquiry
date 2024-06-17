@@ -23,8 +23,6 @@
               <el-button @click="resetLoginForm">重置</el-button>
             </el-form-item>
           </el-form>
-
-
         </el-tab-pane>
       </el-tabs>
     </div>
@@ -96,7 +94,6 @@ export default {
       }
       let token = '';
 
-
       var data = new FormData();
       data.append('userId', data2.userId);
       data.append('passwd', data2.passwd);
@@ -128,7 +125,6 @@ export default {
       console.log("这是接受的值" + that.accept);
     },
 
-
     resetLoginForm() {
       this.$refs["loginForm"].resetFields();
     },
@@ -140,6 +136,7 @@ export default {
   }
 }
 </script>
+
 
 <style scoped lang='less'>
 .login {
@@ -196,7 +193,6 @@ export default {
     font-weight: 600;
   }
 
-
   .Deutsch {
     height: 60px;
   }
@@ -206,7 +202,6 @@ export default {
     line-height: 48px;
     font-size: 22px;
   }
-
 
   /deep/ .el-button--medium {
     padding: 10px 20px;
