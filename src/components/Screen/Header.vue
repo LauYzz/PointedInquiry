@@ -27,6 +27,7 @@ export default {
 .home-container {
   height: 100%;
 }
+
 .el-header {
   background-color: darkslategrey;
   display: flex;
@@ -35,18 +36,22 @@ export default {
   align-items: center;
   color: #fff;
   font-size: 24px;
-  > div {
+
+  >div {
     //内嵌的div样式
     display: flex;
     align-items: center;
+
     span {
       margin-left: 25px;
     }
   }
 }
+
 .el-aside {
   background-color: #333744;
 }
+
 .el-main {
   background-color: #eaedf1;
 }

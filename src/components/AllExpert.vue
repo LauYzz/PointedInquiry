@@ -3,9 +3,10 @@
     <link rel="stylesheet icon" href="//at.alicdn.com/t/c/font_3828548_f8oepiumx94.css">
     <div class="icons">
       <span class="com" @click="changeView(1)"><i class="iconfont icon-shangyehezuo-copy"></i>
-        <div style="text-align:center;" >心理</div>
+        <div style="text-align:center;">心理</div>
       </span>
-      <span class="com" style="margin-left:50px;margin-right:50px;"  @click="changeView(2)"><i class="iconfont icon-bianji_edit"></i>
+      <span class="com" style="margin-left:50px;margin-right:50px;" @click="changeView(2)"><i
+          class="iconfont icon-bianji_edit"></i>
         <div style="text-align:center;">学业</div>
       </span>
       <span class="com" @click="changeView(3)"><i class="iconfont icon-gongzuotai_workbench"></i>
@@ -123,7 +124,7 @@
 
 .price {
   font-size: 18px;
-  color:royalblue;
+  color: royalblue;
   float: right;
 }
 
@@ -222,8 +223,8 @@ export default {
       var config = {
         method: 'get',
         url: '/expert/getAll',
-        params:{
-          type:1
+        params: {
+          type: 1
         }
       }
       var res = await axios(config)
@@ -251,7 +252,7 @@ export default {
         method: 'get',
         url: '/expert/getAll',
         params: {
-          type:index
+          type: index
         }
       }
       var res = await axios(config)
@@ -432,7 +433,7 @@ export default {
 
 .price {
   font-size: 18px;
-  color:royalblue;
+  color: royalblue;
   float: right;
 }
 
@@ -580,7 +581,7 @@ export default {
 
 .price {
   font-size: 18px;
-  color:royalblue;
+  color: royalblue;
   float: right;
 }
 

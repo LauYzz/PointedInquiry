@@ -2,7 +2,9 @@
   <el-container>
     <Header />
     <el-container>
-      <el-main style="height: 710px"><ExpertScreen /></el-main>
+      <el-main style="height: 710px">
+        <ExpertScreen />
+      </el-main>
     </el-container>
     <Footer :num="num"></Footer>
   </el-container>
@@ -22,6 +24,7 @@
   box-sizing: border-box;
   min-width: 0;
 }
+
 .el-header {
   background-color: darkslategrey;
   display: flex;
@@ -30,15 +33,18 @@
   align-items: center;
   color: #fff;
   font-size: 24px;
-  > div {
+
+  >div {
     //内嵌的div样式
     display: flex;
     align-items: center;
+
     span {
       margin-left: 25px;
     }
   }
 }
+
 .element.style {
   height: 100px;
 }
@@ -52,6 +58,7 @@
   letter-spacing: 0.2em; //字体之间的距离
   cursor: pointer; //鼠标的形状（手形）
 }
+
 .submenu {
   display: inline-flex;
   text-align: left;
@@ -61,6 +68,7 @@
 .el-aside {
   background-color: #333744;
 }
+
 .el-main {
   background-color: #eaedf1;
 }

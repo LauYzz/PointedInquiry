@@ -1,17 +1,17 @@
 <template>
   <div>
-      <el-form :model="form">
-  <el-form-item label="投诉内容" :label-width="formLabelWidth">
-    <el-input type="textarea" v-model="form.name" autocomplete="off"></el-input>
-  </el-form-item>
-</el-form>
-<div style="margin-left:0px;">
-        <div style="text-align:center;" slot="footer" class="dialog-footer">
-      <br>
-  <el-button @click="dialogFormVisible = false">取 消</el-button>
-  <el-button type="primary" @click="ConfirmComplaint()">确 定</el-button>
-        </div>
-  </div>
+    <el-form :model="form">
+      <el-form-item label="投诉内容" :label-width="formLabelWidth">
+        <el-input type="textarea" v-model="form.name" autocomplete="off"></el-input>
+      </el-form-item>
+    </el-form>
+    <div style="margin-left:0px;">
+      <div style="text-align:center;" slot="footer" class="dialog-footer">
+        <br>
+        <el-button @click="dialogFormVisible = false">取 消</el-button>
+        <el-button type="primary" @click="ConfirmComplaint()">确 定</el-button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -21,7 +21,7 @@ import Test4 from "../Test4.vue";
 export default {
   props: {
     "order_id": { type: String, default: "0001" },
-    "be_user_id":{ type: String, default: "0001" },
+    "be_user_id": { type: String, default: "0001" },
   },
   data() {
     return {
@@ -82,7 +82,7 @@ export default {
 
       axios(config)
         .then(function (response) {
-          that.$emit('visible',false);
+          that.$emit('visible', false);
         })
         .catch(function (error) {
           console.log(error);
@@ -91,15 +91,14 @@ export default {
       //this.$router.push('/Home');
     },
   },
-    mounted() {
-      this.userId = localStorage.getItem('userId');
-      console.log("写投诉页面的userId是" + this.userId);
-    }
-  };
+  mounted() {
+    this.userId = localStorage.getItem('userId');
+    console.log("写投诉页面的userId是" + this.userId);
+  }
+};
 </script>
 
 <style scoped lang="less">
-
 /deep/.el-form-item__label {
   text-align: center;
   vertical-align: middle;
@@ -121,9 +120,11 @@ export default {
   width: 180px;
   height: 180px;
 }
+
 .avatar-uploader .el-upload:hover {
   border-color: #409EFF;
 }
+
 .avatar-uploader-icon {
   font-size: 28px;
   color: #8c939d;
@@ -132,6 +133,7 @@ export default {
   line-height: 178px;
   text-align: center;
 }
+
 .avatar-uploader /deep/ .el-upload-list__item {
   overflow: hidden;
   background-color: #fff;

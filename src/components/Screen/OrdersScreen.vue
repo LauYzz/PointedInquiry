@@ -66,23 +66,23 @@ export default {
           break;
         case 'second':
           this.updateStatus('orderStatus2');
-          break; 
+          break;
         case 'third':
           this.updateStatus('orderStatus3');
-          break; 
+          break;
         case 'forth':
           this.updateStatus('orderStatus4');
           break;
         case 'fifth':
-        this.updateStatus('orderStatus5'); 
-        break;
+          this.updateStatus('orderStatus5');
+          break;
       }
     },
-    updateStatus(name){
-      for(let key in this.orderStatus){
-        if(key == name){
+    updateStatus(name) {
+      for (let key in this.orderStatus) {
+        if (key == name) {
           this.orderStatus[key] = true;
-        }else{
+        } else {
           this.orderStatus[key] = false;
         }
       }
@@ -90,8 +90,8 @@ export default {
   }
 };
 </script>
-  
-  
+
+
 <style scoped lang="less">
 .bg {
   width: 100%;
@@ -137,14 +137,15 @@ export default {
   text-align: left;
   margin-left: 15px;
 }
+
 .topic-span {
-  width:100%;
+  width: 100%;
   padding: 8px;
   margin: 4px;
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
-  background-color:teal;
+  background-color: teal;
   color: #fff;
 }
 
