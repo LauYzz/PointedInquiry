@@ -43,4 +43,15 @@ public class Order implements Serializable {
     private Integer price;
 
 
+    public short getUserId() {
+        return 0;
+    }
+
+    public short getProductId() {
+        return 0;
+    }
+
+    public short getQuantity() {
+        return 0;
+    }
 }

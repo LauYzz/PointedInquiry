@@ -20,4 +20,25 @@ public class OrderCreateDto {
     String topic_id;
     String appoint_time;
     Integer price;
+
+    public void setUserId(String number) {
+    }
+
+    public void setProductId(String number) {
+    }
+
+    public void setQuantity(int i) {
+    }
+
+    public short getUserId() {
+        return 0;
+    }
+
+    public short getProductId() {
+        return 0;
+    }
+
+    public short getQuantity() {
+        return 0;
+    }
 }

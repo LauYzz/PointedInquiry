@@ -1,6 +1,7 @@
 package com.pointedInquery.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.pointedInquery.dto.OrderCreateDto;
 import com.pointedInquery.dto.OrderDetailedInfoDto;
 import com.pointedInquery.entity.Expert;
 import com.pointedInquery.entity.Order;
@@ -177,4 +178,23 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         return orderMapper.cancleOrder(orderId);
     }
 
+    public Order createOrder(OrderCreateDto orderCreateDto) {
+        return null;
+    }
+
+    public OrderDetailedInfoDto getOrderById(String orderId) {
+        return null;
+    }
+
+    public List<Order> getAllOrders() {
+        return null;
+    }
+
+    public Order updateOrder(String orderId, OrderCreateDto orderCreateDto) {
+        return null;
+    }
+
+    public boolean deleteOrder(String orderId) {
+        return false;
+    }
 }
