@@ -1,3 +1,62 @@
+<script>
+import axios from "axios";
+import Vue from 'vue';
+import Vuex from 'vuex';
+import Expert from './expert.vue';
+import Test5 from "./Test5.vue";
+Vue.use(Vuex);
+
+
+export default {
+  props:
+      ['value']
+    ,
+  data() {
+      return {
+        url:"https://www.fastmock.site/mock/250ee180a111c6d746fee10f8955645e/UserOrders/Orders",
+        Orders:[],
+        currentDate: new Date()
+      };
+  },
+  components: {
+      Expert,
+      Test5
+  },
+    methods: {
+      getExpert(item, index) {
+        console.log(this.Orders[index].promoter);
+        var id = this.Orders[index].promoter;
+        this.$router.push({
+          path: `/expert/${id}`
+        })
+      },
+  
+
+        //从接口获取Topic信息，初始化给Orders
+        //点击某个Topic，获取到Topic的id，访问id对应的商品页面（把id给到商品详情页，由这个页面来发送请求给后端id，关注一下怎么传值吧！）
+      
+  },
+  mounted() {
+    axios.get(this.url).then(res => {
+          this.Orders = res.data;
+      console.log(this.Orders);
+      var length = this.Orders.length;
+      console.log(length);
+      for (var i = 0; i < length; i++)
+      {
+        if (this.Orders[i].way === '0') {
+          console.log(this.Orders[i].way);
+          this.Orders[i].by = '线上约聊';
+        }
+        else {
+          console.log(this.Orders[i].way)
+          this.Orders[i].by = '线下约聊';
+        }
+      }
+        })
+    }
+  }
+  </script>
 <template>
     <div class="bg">
     <el-row>
@@ -41,8 +100,107 @@
       </div>
     </template>
     
-      <style scoped lang="less">
+<style scoped lang="less">
 
+.btn{
+    
+    position:relative;
+    width:100%;
+    text-align:center;
+    float:right;
+}
+.review{
+    margin-left:100px;
+}
+
+.complaint{
+    margin-right:100px;
+}
+.bg{
+    width: 100%;
+    height: 100vh;
+    background-size: 100% 100%;
+    background-position: center center;
+    background-image: url("../img/galaxy.jpg");
+    overflow: auto;
+    position: relative
+}
+
+    .price{
+      margin-left:20px;
+      font-size:28px;
+      color:red;
+    }
+    
+
+    .rating{
+      font-size:28px;
+      color:coral;
+      float:right;
+      margin-right:20px;
+    }
+      .leftsubdes{
+        display:inline-block;
+        font-size:20px;
+        width:240px;
+        margin-right:60px;
+      }
+
+      .rightsubdes{
+          width:40%;
+          font-size:20px;
+      }
+    /deep/.Tname{
+      font-size:50px;
+    }
+    
+    /deep/.description{
+      font-size:2px;
+    }
+    
+    .el-card {
+        border-radius: 24px;
+        border: 1px solid #EBEEF5;
+        background-color: #FFF;
+        overflow: hidden;
+        color: #303133;
+        transition: .3s;
+        width: 560px; 
+        margin-bottom: 30px;
+        height: 320px;
+    }
+    
+        .time {
+          font-size: 13px;
+          color: #999;
+        }
+        
+        .bottom {
+          margin-top: 13px;
+          line-height: 12px;
+        }
+      
+        .button {
+          padding: 0;
+          float: right;
+        }
+      
+        .image {
+          width: 100%;
+          display: block;
+        }
+      
+        .clearfix:before,
+        .clearfix:after {
+            display: table;
+            content: "";
+        }
+        
+        .clearfix:after {
+            clear: both
+        }
+      </style>
+<style scoped lang="less">
 
 .btn{
     
@@ -143,62 +301,105 @@
         }
       </style>
 
-<script>
-import axios from "axios";
-import Vue from 'vue';
-import Vuex from 'vuex';
-import Expert from './expert.vue';
-import Test5 from "./Test5.vue";
-Vue.use(Vuex);
+<style scoped lang="less">
 
+.btn{
+    
+    position:relative;
+    width:100%;
+    text-align:center;
+    float:right;
+}
+.review{
+    margin-left:100px;
+}
 
-export default {
-  props:
-      ['value']
-    ,
-  data() {
-      return {
-        url:"https://www.fastmock.site/mock/250ee180a111c6d746fee10f8955645e/UserOrders/Orders",
-        Orders:[],
-        currentDate: new Date()
-      };
-  },
-  components: {
-      Expert,
-      Test5
-  },
-    methods: {
-      getExpert(item, index) {
-        console.log(this.Orders[index].promoter);
-        var id = this.Orders[index].promoter;
-        this.$router.push({
-          path: `/expert/${id}`
-        })
-      },
-  
+.complaint{
+    margin-right:100px;
+}
+.bg{
+    width: 100%;
+    height: 100vh;
+    background-size: 100% 100%;
+    background-position: center center;
+    background-image: url("../img/galaxy.jpg");
+    overflow: auto;
+    position: relative
+}
 
-        //从接口获取Topic信息，初始化给Orders
-        //点击某个Topic，获取到Topic的id，访问id对应的商品页面（把id给到商品详情页，由这个页面来发送请求给后端id，关注一下怎么传值吧！）
-      
-  },
-  mounted() {
-    axios.get(this.url).then(res => {
-          this.Orders = res.data;
-      console.log(this.Orders);
-      var length = this.Orders.length;
-      console.log(length);
-      for (var i = 0; i < length; i++)
-      {
-        if (this.Orders[i].way === '0') {
-          console.log(this.Orders[i].way);
-          this.Orders[i].by = '线上约聊';
-        }
-        else {
-          console.log(this.Orders[i].way)
-          this.Orders[i].by = '线下约聊';
-        }
-      }
-        })
+    .price{
+      margin-left:20px;
+      font-size:28px;
+      color:red;
     }
-  }
-  </script>
+    
+
+    .rating{
+      font-size:28px;
+      color:coral;
+      float:right;
+      margin-right:20px;
+    }
+      .leftsubdes{
+        display:inline-block;
+        font-size:20px;
+        width:240px;
+        margin-right:60px;
+      }
+
+      .rightsubdes{
+          width:40%;
+          font-size:20px;
+      }
+    /deep/.Tname{
+      font-size:50px;
+    }
+    
+    /deep/.description{
+      font-size:2px;
+    }
+    
+    .el-card {
+        border-radius: 24px;
+        border: 1px solid #EBEEF5;
+        background-color: #FFF;
+        overflow: hidden;
+        color: #303133;
+        transition: .3s;
+        width: 560px; 
+        margin-bottom: 30px;
+        height: 320px;
+    }
+    
+        .time {
+          font-size: 13px;
+          color: #999;
+        }
+        
+        .bottom {
+          margin-top: 13px;
+          line-height: 12px;
+        }
+      
+        .button {
+          padding: 0;
+          float: right;
+        }
+      
+        .image {
+          width: 100%;
+          display: block;
+        }
+      
+        .clearfix:before,
+        .clearfix:after {
+            display: table;
+            content: "";
+        }
+        
+        .clearfix:after {
+            clear: both
+        }
+      </style>
+
+

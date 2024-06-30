@@ -349,3 +349,299 @@ export default {
 
 
 </script>
+<style scoped lang="less">
+.hr_solid {
+  border: 0;
+  border-top: 1px solid #d0d0d5;
+  float: right;
+}
+
+
+.icons {
+  border: 1px;
+  padding: 10px;
+  border-radius: 2px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.com {
+  display: inline-block;
+}
+
+.iconfont {
+  display: inline-block;
+  font-size: 60px;
+}
+
+.psychology {
+  display: none;
+}
+
+.city {
+  color: gray;
+}
+
+.name {
+  color: black;
+  font-size: 20px;
+}
+
+.title {
+  display: inline-block;
+  margin-top: 8px;
+  color: gray;
+}
+
+.topic {
+  padding: 0px;
+  margin-top: 60px;
+  line-height: 28px;
+}
+
+.type {
+  display: inline-block;
+  margin: 8px;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: lightblue;
+  color: cadetblue;
+  text-align: center;
+  line-height: 24px;
+}
+
+.line_01 {
+  padding: 0 20px 0;
+  margin: 20px 0;
+  line-height: 5px;
+  border-left: 250px solid #ddd;
+  border-right: 250px solid #ddd;
+  text-align: center;
+}
+
+.bg {
+  width: 100%;
+  height: 100vh;
+  background-size: 100% 100%;
+  background-position: center center;
+  background-image: url("../img/galaxy.jpg");
+  overflow: auto;
+  position: relative;
+}
+
+.price {
+  font-size: 18px;
+  color:royalblue;
+  float: right;
+}
+
+.rating {
+  margin-top: 8px;
+  font-size: 24px;
+  color: coral;
+  float: left;
+}
+
+.subdes {
+  margin-top: 8px;
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+
+/deep/.Tname {
+  text-align: center;
+  font-size: 28px;
+}
+
+/deep/.description {
+  font-size: 2px;
+}
+
+.el-card {
+  border-radius: 2px;
+  background-color: #FFF;
+  overflow: hidden;
+  transition: .3s;
+  margin-bottom: 30px;
+  height: auto;
+}
+
+.time {
+  font-size: 13px;
+  color: #999;
+}
+
+.bottom {
+  margin-top: 13px;
+  line-height: 12px;
+}
+
+.button {
+  padding: 0;
+  float: right;
+}
+
+.image {
+  width: 100%;
+  display: block;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both
+}
+</style>
+<style scoped lang="less">
+.hr_solid {
+  border: 0;
+  border-top: 1px solid #d0d0d5;
+  float: right;
+}
+
+
+.icons {
+  border: 1px;
+  padding: 10px;
+  border-radius: 2px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.com {
+  display: inline-block;
+}
+
+.iconfont {
+  display: inline-block;
+  font-size: 60px;
+}
+
+.psychology {
+  display: none;
+}
+
+.city {
+  color: gray;
+}
+
+.name {
+  color: black;
+  font-size: 20px;
+}
+
+.title {
+  display: inline-block;
+  margin-top: 8px;
+  color: gray;
+}
+
+.topic {
+  padding: 0px;
+  margin-top: 60px;
+  line-height: 28px;
+}
+
+.type {
+  display: inline-block;
+  margin: 8px;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: lightblue;
+  color: cadetblue;
+  text-align: center;
+  line-height: 24px;
+}
+
+.line_01 {
+  padding: 0 20px 0;
+  margin: 20px 0;
+  line-height: 5px;
+  border-left: 250px solid #ddd;
+  border-right: 250px solid #ddd;
+  text-align: center;
+}
+
+.bg {
+  width: 100%;
+  height: 100vh;
+  background-size: 100% 100%;
+  background-position: center center;
+  background-image: url("../img/galaxy.jpg");
+  overflow: auto;
+  position: relative;
+}
+
+.price {
+  font-size: 18px;
+  color:royalblue;
+  float: right;
+}
+
+.rating {
+  margin-top: 8px;
+  font-size: 24px;
+  color: coral;
+  float: left;
+}
+
+.subdes {
+  margin-top: 8px;
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+
+/deep/.Tname {
+  text-align: center;
+  font-size: 28px;
+}
+
+/deep/.description {
+  font-size: 2px;
+}
+
+.el-card {
+  border-radius: 2px;
+  background-color: #FFF;
+  overflow: hidden;
+  transition: .3s;
+  margin-bottom: 30px;
+  height: auto;
+}
+
+.time {
+  font-size: 13px;
+  color: #999;
+}
+
+.bottom {
+  margin-top: 13px;
+  line-height: 12px;
+}
+
+.button {
+  padding: 0;
+  float: right;
+}
+
+.image {
+  width: 100%;
+  display: block;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both
+}
+</style>

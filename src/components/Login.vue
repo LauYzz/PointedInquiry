@@ -216,3 +216,159 @@ export default {
 
 }
 </style>
+<style scoped lang='less'>
+.login {
+  background-image: url("../img/new_login-background.png");
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+
+  .login_form {
+    margin-left: 100px;
+    margin-top: 240px;
+    opacity: 100%;
+    height: 55%;
+    width: 95%;
+    position: absolute;
+    margin-left: 0px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 0px;
+    box-shadow: 0 0 10px #ddd;
+
+    .btns {
+      display: flex;
+      justify-content: center;
+    }
+
+    /deep/.el-form-item__error {
+      color: #F56C6C;
+      font-size: 12px;
+      line-height: 1;
+      padding-top: 4px;
+      position: absolute;
+      top: 100%;
+      left: 0;
+    }
+
+    .infoIn {
+      width: 100%;
+    }
+
+    .elItem {
+      width: 80%;
+    }
+  }
+
+  p {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .Deutsch {
+    height: 60px;
+  }
+
+  /deep/ .el-input--medium .el-input__inner {
+    height: 48px;
+    line-height: 48px;
+    font-size: 22px;
+  }
+
+  /deep/ .el-button--medium {
+    padding: 10px 20px;
+    font-size: 24px;
+    border-radius: 8px;
+    margin: 20px;
+  }
+
+  .el-input--medium {
+    font-size: 20px;
+  }
+
+}
+</style>
+<style scoped lang='less'>
+.login {
+  background-image: url("../img/new_login-background.png");
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+
+  .login_form {
+    margin-left: 100px;
+    margin-top: 240px;
+    opacity: 100%;
+    height: 55%;
+    width: 95%;
+    position: absolute;
+    margin-left: 0px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 0px;
+    box-shadow: 0 0 10px #ddd;
+
+    .btns {
+      display: flex;
+      justify-content: center;
+    }
+
+    /deep/.el-form-item__error {
+      color: #F56C6C;
+      font-size: 12px;
+      line-height: 1;
+      padding-top: 4px;
+      position: absolute;
+      top: 100%;
+      left: 0;
+    }
+
+    .infoIn {
+      width: 100%;
+    }
+
+    .elItem {
+      width: 80%;
+    }
+  }
+
+  p {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .Deutsch {
+    height: 60px;
+  }
+
+  /deep/ .el-input--medium .el-input__inner {
+    height: 48px;
+    line-height: 48px;
+    font-size: 22px;
+  }
+
+  /deep/ .el-button--medium {
+    padding: 10px 20px;
+    font-size: 24px;
+    border-radius: 8px;
+    margin: 20px;
+  }
+
+  .el-input--medium {
+    font-size: 20px;
+  }
+
+}
+</style>
